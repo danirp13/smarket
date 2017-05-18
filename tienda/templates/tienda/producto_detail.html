@@ -10,16 +10,22 @@
 <div>
  <table border="1px">
  <tr>
- {% if object.id_categoria %}
- <td><label>nombre</label></td>
- <td><label>descripcion</label></td>
+ 
+ <td><label>id</label></td>
+ <td><label>cantidad</label></td>
+ <td><label>precio</label></td>
+ <td><label>fecha ingreso</label></td>
  
  <tr>
- <td> {{ p.nombre }} </td>
- <td> {{ p.descripcion }} </td>
+ <td> {{ object.id_producto }} </td>
+ <td> {{ object.cantidad }} </td>
+ <td> {{ object.precio }} </td>
+ <td> {{ object.fecha_ingreso }} </td>
  </tr>
- {% endif %}
+ 
  </tr>
  </table>
  </div>
+ <a href="{% url 'producto-update' object.id_producto %}">edit</a>
+ <a href="{% url 'producto-delete' object.id_producto %}">delete</a​>
  {% endblock maincontent %}  

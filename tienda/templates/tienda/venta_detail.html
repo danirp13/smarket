@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ <h2>{{ object.id_venta }}</h2>
+ <hr>
+{% endblock section %}
+{% block maincontent %}  
+
+<div>
+ <table border="1px">
+ <tr>
+ 
+ <td><label>cantidad venta</label></td>
+ <td><label>valor</label></td>
+ <td><label>fecha</label></td>
+ <td><label>productos</label></td>
+ <tr>
+ <td> {{ object.cantidad_venta }} </td>
+ <td> {{ object.valor }} </td>
+ <td> {{ object.fecha_venta }} </td>
+ <td> {{ object.productos }} </td>
+ 	
+ </tr>
+ 
+ </tr>
+ </table>
+ </div>
+ 
+ <a href="{% url 'venta-delete' object.id_venta %}">delete</a​>
+
+ {% endblock maincontent %}  

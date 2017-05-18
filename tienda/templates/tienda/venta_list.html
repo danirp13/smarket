@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block section %}
- <h2>productos</h2>
+ <h2>Ventas</h2>
  <hr>
 {% endblock section %}
 {% block maincontent %}
  <div>
  {% for c in object_list %}
- <a href="{% url 'producto-detail' c.pk %}">
- {{ c.nombre }}
+ <a href="{% url 'venta-detail' c.pk %}">
+
+ {{ c.id_venta }}
  </a>
+ </br>
+ 
  {% endfor %}
  </div>
- <a href="{% url 'producto-create' %}">create</a​>
+ <a href="{% url 'venta-create' %}">create</a​>
 {% endblock maincontent %} 
