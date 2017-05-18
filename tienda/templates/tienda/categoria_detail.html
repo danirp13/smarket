@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ <h2>{{ object.nombre }}</h2>
+ <hr>
+{% endblock section %}
+{% block maincontent %}  
+
+<div>
+ <table border="1px">
+ <tr>
+ {% for p in object.producto_set.all %}
+ <td><label>nombre</label></td>
+ <td><label>cantidad</label></td>
+ <td><label>precio</label></td>
+ <tr>
+ <td> {{ p.nombre }} </td>
+ <td> {{ p.cantidad }} </td>
+ <td> {{ p.precio }} </td>	
+ </tr>
+ {% endfor %}
+ </tr>
+ </table>
+ </div>
+ <a href="{% url 'categoria-update' object.id_categoria %}">edit</a>
+ <a href="{% url 'categoria-delete' object.id_categoria %}">delete</a​>
+ 
+
+ {% endblock maincontent %}  
